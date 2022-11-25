@@ -141,12 +141,16 @@ const estudantes = [
 
 //BUSCAR CURSO
 const buscarCurso = (nomeCurso) => {
-    let procurar = cursos.find(procurar => procurar.curso.toLowerCase() === nomeCurso.toLowerCase())
 
-    return procurar
+    let i = 0
+
+    while (nomeCurso.toLowerCase() !== cursos[i].curso.toLowerCase()) {//tembem pode ser usado cursos[1]["curso"]
+        i++
+    }
+    return cursos[i]
 }
 
-console.log(buscarCurso("javascript"))
+//console.log(buscarCurso("html e css"))
 
 //BUSCAR TURMA
 const buscarTurma = (nomeTurma) => {
@@ -158,18 +162,20 @@ const buscarTurma = (nomeTurma) => {
 
 }
 
-buscarTurma("elion")
+//buscarTurma("elion")
 
 //BUSCAR ESTUDANTE
 const buscarEstudante = (nomeEstudante) => {
     let i = 0
 
     while (nomeEstudante.toLowerCase() !== estudantes[i].estudante.toLowerCase()) {
-        i++
+        i++  
     }
 
     //const localizarParteNome = estudantes.estudante.indexOf(i).toLowerCase()
 
+
+    //console.log(localizarParteNome)
     return estudantes[i]
 }
 
@@ -177,6 +183,22 @@ const buscarEstudante = (nomeEstudante) => {
 console.log(buscarEstudante("halle berry"))
 
 
+
+/* const buscarEstudante = (nomeEstudante) => {
+
+    if (estudantes.indexOf(nomeEstudante) !== -1) {
+        
+        const filtrarEstudante = estudantes.filter(estudanteProcurado => estudanteProcurado.estudante.toLowerCase() === nomeEstudante.toLowerCase())
+
+        return filtrarEstudante
+
+    } else {
+        console.log('Aluno nao encontrado')
+    }
+}
+ */
+
+//buscarEstudante("Halle Berry")
 
 //-------------------------------FUNCAO MATRICULAR--------------------------------
 
@@ -208,8 +230,8 @@ const matricular = (nome, curso, turma, nParcelas) => {
 }
 
 
-matricular("Miguel Alves", "JavaScript", "Clarke", 2)
-console.log(estudantes)
+//matricular("Miguel Alves", "JavaScript", "Clarke", 2)
+//console.log(estudantes)
 
 //----------------------------FUNCAO CARRINHO CURSOS-------------------------------
 
@@ -225,7 +247,7 @@ adicionarCarrinho(buscarCurso("javascript"))
 adicionarCarrinho(buscarCurso("html e css"))
 adicionarCarrinho(buscarCurso("apisrest"))
 
-console.log(carrinhoCursos)
+//console.log(carrinhoCursos)
 
 //-------------------------FUNCAO PARCELAR CURSO COMPLETA--------------------------
 //USANDO IF + FOR + SWITCH CASE
@@ -273,7 +295,7 @@ const parcelarCurso = (nParcelas, carrinhoCursos) => {
 }
 
 
-parcelarCurso(2, carrinhoCursos)
+//parcelarCurso(2, carrinhoCursos)
 
 //-------------------------------FUNCAO RELATORIO ESTUDANTE--------------------------------
 
@@ -281,4 +303,37 @@ const relatorioEstudante = (funcaoBuscarEstudante) => {
     return `Aluno: ${funcaoBuscarEstudante.estudante}\nTurma: ${funcaoBuscarEstudante.turma}\nCurso: ${funcaoBuscarEstudante.curso}\nValor Total: ${funcaoBuscarEstudante.valor}\nValor Parcela: ${funcaoBuscarEstudante.parcelas}\nNumero de Parcelas: ${funcaoBuscarEstudante.nParcelas}`
 }
 
-console.log(relatorioEstudante(buscarEstudante("halle berry")))
+//console.log(relatorioEstudante(buscarEstudante("halle berry")))
+
+//USANDO FIND
+
+//let procurar = cursos.find(procurar => procurar.curso.toLowerCase() === cursoParcelar.toLowerCase())
+
+
+ /*    let i = 0
+    const nomeCursoLowerCase = cursos[i]['curso'].toLowerCase()
+    const nomeCursoProcuradoLowerCase = nomeCurso.toLowerCase()
+    const indice = nomeCursoLowerCase.indexOf(nomeCursoProcuradoLowerCase)
+
+
+    for (i in cursos) {
+        
+            console.log(cursos[i])
+    } */
+
+
+/* const buscarEstudante = (nomeEstudante) => {
+
+    if (estudantes.indexOf(nomeEstudante) !== -1) {
+        
+        const filtrarEstudante = estudantes.filter(estudanteProcurado => estudanteProcurado.estudante.toLowerCase() === nomeEstudante.toLowerCase())
+
+        return filtrarEstudante
+
+    } else {
+        console.log('Aluno nao encontrado')
+    }
+}
+ */
+
+//buscarEstudante("Halle Berry")

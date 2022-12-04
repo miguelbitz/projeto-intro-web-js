@@ -143,17 +143,36 @@ const estudantes = [
 const buscarCurso = (nomeCurso) => {
     let procurar = cursos.find(procurar => procurar.curso.toLowerCase() === nomeCurso.toLowerCase())
 
-    return procurar
+    if (procurar) {
+        return procurar
+    } else {
+        return 'Curso nao encontrado'
+    }
+    /*     for (i = 0; i < cursos.length; i++) {
+            if (cursos[i].curso.toLocaleLowerCase() === nomeCurso) {
+                return cursos[i]
+            }
+        }
+    
+        return 'Aluno nao encontrado'
+    } */
+    /*     for (i in cursos) {
+            if (cursos[i].curso.toLowerCase() === nomeCurso.toLowerCase()) {
+                return cursos[i]
+            }
+        }
+    
+        return 'Aluno nao encontrado' */
 }
 
-console.log(buscarCurso("javascript"))
+console.log(buscarCurso("html e css"))
 
 //BUSCAR TURMA
 const buscarTurma = (nomeTurma) => {
     const filtrarTurma = turmas.filter(turmaProcurada => turmaProcurada.nome.toLowerCase() === nomeTurma.toLowerCase())// filtra o nome da turma e coloca dentro da variavel filtrar turma, essa variavel vira um array com o resultado
 
 
-    //se o tamanho do array for maio que zero entao retorna  a variavel filtrarTurma, se nao ele na achou a turma
+    //se o tamanho do array for maior que zero entao retorna  a variavel filtrarTurma, se nao achar, retorna turma nao encontrada
     filtrarTurma.length > 0 ? console.log(filtrarTurma) : console.log('Turma nao encontrada')
 
 }
@@ -162,20 +181,17 @@ buscarTurma("elion")
 
 //BUSCAR ESTUDANTE
 const buscarEstudante = (nomeEstudante) => {
-    let i = 0
 
-    while (nomeEstudante.toLowerCase() !== estudantes[i].estudante.toLowerCase()) {
-        i++
+    for (i = 0; i < estudantes.length; i++) {
+        if (estudantes[i].estudante.toLowerCase().includes(nomeEstudante.toLowerCase()) !== false) {
+            return estudantes[i]
+        }
     }
 
-    //const localizarParteNome = estudantes.estudante.indexOf(i).toLowerCase()
-
-    return estudantes[i]
+    return 'Aluno nao encontrado'
 }
 
-
-console.log(buscarEstudante("halle berry"))
-
+console.log(buscarEstudante("halle"))
 
 
 //-------------------------------FUNCAO MATRICULAR--------------------------------

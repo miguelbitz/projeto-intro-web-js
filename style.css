@@ -1,0 +1,634 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+
+:root {
+    --corDestaque: #F6C34A;
+}
+
+body {
+    background-color: var(--corDestaque);
+}
+
+
+/* -------------HEADER------------ */
+header {
+    background-color: white;
+    padding: 0 7rem;
+    width: 100%;
+    height: 5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-header {
+    justify-self: end;
+}
+
+#logo {
+    width: 349px;
+}
+
+
+.li-header {
+    list-style: none;
+    color: black;
+    padding: 20px;
+    display: inline-block;
+    font-size: 24px;
+}
+
+
+.li-header a {
+    text-decoration: none;
+    color: #0E0E0E;
+}
+
+.li-header a::after {
+    content: '';
+    display: block;
+    height: 0.1em;
+    width: 0;
+    background: black;
+    transition: all .5s;
+
+}
+
+.li-header a:hover::after {
+    width: 100%;
+}
+
+/* --------------FOOTER-------------- */
+footer {
+    width: 100%;
+    height: 467px;
+    padding-top: 1vh;
+    padding-bottom: 4vh;
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
+.nav-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.nav-footer h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    margin: 25px 5px
+}
+
+.nav-footer p {
+    margin: 8px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    gap: 30px;
+}
+
+#redes-sociais {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 184px;
+    height: 29px;
+}
+
+.imagem-footer {
+    width: 210px;
+    height: 45.23px;
+    padding-left: 5.5rem;
+}
+
+.nav-footer a {
+    text-decoration: none;
+    color: #0E0E0E;
+}
+
+/* --------------HOME------------- */
+/* ------------SECTION 1---------- */
+.whats-logo-home {
+    position: fixed;
+    margin-top: 17vh;
+    margin-left: 42vw;
+    width: 70px;
+
+}
+
+.section-h1 {
+    width: 100%;
+    height: 92vh;
+    display: flex;
+    background-image: url('/imagens/background-hero.png');
+    background-color: var(--corDestaque);
+    background-size: cover;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.section-h1 h1 {
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 90px;
+}
+
+.section-h1 p {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 51px;
+}
+
+#botao-home {
+    width: 22vw;
+    height: 8vh;
+    margin-top: 7vh;
+    background-color: black;
+    color: white;
+    border-radius: 9px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+#botao-home a {
+    text-decoration: none;
+    color: white;
+}
+
+/* ------------SECTION 2---------- */
+.section-h2 {
+    width: 100%;
+    height: 30em;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+}
+
+.section-h2 h1 {
+    margin-top: 7vh;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 60px;
+}
+
+.section-h2 article {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    margin-top: 5vh;
+    margin-left: 45vh;
+    margin-right: 45vh;
+}
+
+/* ------------SECTION 3---------- */
+.section-h3 {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: 40em;
+}
+
+.section-h3 h1 {
+    font-weight: 700;
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+
+.depoimentos {
+    width: 330px;
+    height: 372px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 0.8vw;
+    margin-top: -10vh;
+}
+
+.section-h3 p {
+    text-align: left;
+    margin: 10%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.depo-elipse {
+    width: 108px;
+    height: 108px;
+    margin-top: 10%;
+
+}
+
+/* --------------CURSOS------------- */
+/* ------------SECTION 1---------- */
+
+.section-c1 {
+    width: 100%;
+    height: 92vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 30vh;
+    justify-items: center;
+    align-items: center;
+    padding: 7% 10%;
+}
+
+.cursos {
+    display: flex;
+    order: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 12px;
+    width: 387px;
+    height: 369px;
+    gap: 2vw;
+
+}
+
+.cursos h1 {
+    width: 196px;
+    height: 51px;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 51px;
+    text-align: center;
+
+}
+
+.cursos p {
+    width: 312px;
+    height: 176px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: left;
+}
+
+#botao-curso {
+    margin-top: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1;
+    width: 450px;
+    height: 79px;
+    color: white;
+    background: #0E0E0E;
+    border-radius: 9px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+#botao-curso a {
+    color: white;
+    text-decoration: none;
+}
+
+.whats-logo-cursos {
+    position: fixed;
+    margin-top: 10vh;
+    margin-left: 68.5vw;
+    width: 70px;
+}
+
+/* ------------SECTION 2---------- */
+
+.section-c2 {
+    width: 100%;
+    height: 65em;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+.section-c2 h1 {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 51px;
+}
+
+.section-c2 h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px
+}
+
+.section-c2 p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 10px 0;
+}
+
+.cursos-modulos {
+    width: 930px;
+    height: 246px;
+    background: #FBFBFB;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: left;
+}
+
+/* --------------CONTATO------------- */
+/* ------------SECTION 1---------- */
+.whats-logo-contato {
+    position: fixed;
+    margin-top: 2vh;
+    margin-left: 42vw;
+    width: 70px;
+
+}
+
+.section-contato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 92vh;
+    background-color: black;
+}
+
+
+
+.form {
+    width: 486.16px;
+    height: 570px;
+    background: #F0F0F0;
+    border-radius: 8.45488px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+}
+
+.form label {
+    width: 359.33px;
+    font-weight: 700;
+    font-size: 16.9098px;
+    line-height: 25px;
+}
+
+.form h1 {
+    width: 359.33px;
+    font-weight: 700;
+    font-size: 23.9555px;
+    line-height: 36px;
+}
+
+#nome-box {
+    display: inline-block;
+    width: 359.33px;
+    height: 40.87px;
+    border: 1.40915px solid #0E0E0E;
+    border-radius: 2.81829px;
+}
+
+#email-box {
+    display: inline-block;
+    width: 359.33px;
+    height: 40.87px;
+    border: 1.40915px solid #0E0E0E;
+    border-radius: 2.81829px;
+}
+
+#mensagem-box {
+    display: inline-block;
+    width: 359.33px;
+    height: 159.23px;
+    border: 1.40915px solid #0E0E0E;
+    border-radius: 2.81829px;
+}
+
+#botao-contato {
+    font-weight: 700;
+    font-size: 16.9098px;
+    line-height: 25px;
+    border: none;
+    width: 357.92px;
+    height: 55.66px;
+    background: #F6C34A;
+    border-radius: 6.34116px;
+}
+
+/* ------------AREA-ADM-TURMAS----------- */
+
+.main-adm-turma {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.nav-adm {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 20vw;
+    height: 92vh;
+    background-color: black;
+    color: #707070;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 5rem;
+    padding-top: 2rem;
+}
+
+.nav-adm a {
+    text-decoration: none;
+    color: #707070;
+}
+
+.nav-adm h1 {
+    margin-left: 6vw;
+    width: 200.39px;
+}
+
+.nav-destaque {
+    color: white;
+}
+
+.nav-destaque a {
+    text-decoration: none;
+    color: white;
+}
+
+.section-adm-turmas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: -5rem;
+}
+
+.grid-turmas1 {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.grid-turmas2 {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.div-turmas {
+    display: flex;
+    width: 240px;
+    height: 223px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.buscar-turma {
+    display: flex;
+    padding-bottom: 6rem;
+
+}
+
+.buscar-turma input::placeholder {
+    padding-left: 1rem;
+    color: #D1D1D1;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+#buscar-box {
+    width: 330px;
+    height: 43px;
+    border-radius: 4px;
+}
+
+#botao-buscar-turma {
+    width: 120px;
+    height: 43px;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    background-color: #0E0E0E;
+    border-radius: 0px 4px 4px 0px;
+    margin-left: -0.2vw;
+
+}
+
+/* ------------AREA-ADM-TURMAS----------- */
+.main-adm-matricular {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: flex-start;
+}
+
+.form-matricular {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    gap: 5px;
+}
+
+.form-matricular-h1{
+    margin-bottom: 1rem;
+}
+
+.form-matricular-label {
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+#botao-matricular {
+    margin-top: 2rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    width: 330px;
+    height: 49.59px;
+}
+
+#nome-box-matricular{
+    width: 330px;
+    height: 36px;
+    border: none;
+    border-radius: 4px;
+}
+
+#curso-box-matricular{
+    width: 330px;
+    height: 36px;
+    border: none;
+    border-radius: 4px;
+}
+
+#turma-box-matricular{
+    width: 330px;
+    height: 36px;
+    border: none;
+    border-radius: 4px;
+}
+
+#nparcela-box-matricular{
+    width: 330px;
+    height: 36px;
+    border: none;
+    border-radius: 4px;
+}

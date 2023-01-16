@@ -14,17 +14,37 @@
 
     <!-- HEADER -->
     <header>
-        <a href="./index.html">
-            <img src="./imagens/logo 1.png" alt="LabEscola logo" id="logo">
-        </a>
+
         <nav class="nav-header">
-            <ul>
-                <li class="li-header"><a href="./index.html">Home</a></li>
-                <li class="li-header"><a href="./cursos.html">Cursos</a></li>
-                <li class="li-header"><a href="./contato.html">Contato</a></li>
-                <li class="li-header"><a href="./area-adm-turmas.html">Area ADM</a></li>
-            </ul>
+
+            <div class="nav-logo">
+                <a href="./index.html">
+                    <img src="./imagens/logo 1.png" alt="LabEscola logo" id="logo">
+                </a>
+            </div>
+
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="./index.html">Home</a></li>
+                    <li class="nav-item"><a href="./cursos.html">Cursos</a></li>
+                    <li class="nav-item"><a href="./contato.html">Contato</a></li>
+                    <li class="nav-item"><a href="./area-adm-turmas.html">Area ADM</a></li>
+                </ul>
+            </div>
+            
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="./imagens/menu-icon-button-7.png" alt=""></button>
+            </div>
         </nav>
+
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="./index.html">Home</a></li>
+                <li class="nav-item"><a href="./cursos.html">Cursos</a></li>
+                <li class="nav-item"><a href="./contato.html">Contato</a></li>
+                <li class="nav-item"><a href="./area-adm-turmas.html">Area ADM</a></li>
+            </ul>
+        </div>
     </header>
 
     <!-- MAIN -->
@@ -35,7 +55,8 @@
             <h1>Descubra o novo ensino!</h1>
             <p>Aprenda de verdade, no seu tempo, no seu ritmo</p>
             <button id="botao-home"><a href="./cursos.html">Conheça nossos cursos</a></button>
-            <a href="https://web.whatsapp.com"><img src="./imagens/logos_whatsapp-icon.png" alt="whats-logo" class="whats-logo-home"></a>
+            <a href="https://web.whatsapp.com"><img src="./imagens/logos_whatsapp-icon.png" alt="whats-logo"
+                    class="whats-logo-home"></a>
         </section>
 
         <section class="section-h2">
@@ -95,7 +116,7 @@
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.996414202162!2d-46.70069624890372!3d-23.568572267669758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57a7c7ace4c3%3A0x586759cab9b5c95a!2sR.%20Pais%20Leme%2C%20215%20-%20Pinheiros%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005424-150!5e0!3m2!1sen!2sbr!4v1672258425582!5m2!1sen!2sbr"
                     width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    referrerpolicy="no-referrer-when-downgrade" id="mapa"></iframe>
             </div>
 
             <div>

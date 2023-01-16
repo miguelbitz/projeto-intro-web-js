@@ -14,25 +14,101 @@
 
     <!-- HEADER -->
     <header>
-        <a href="./index.html">
-            <img src="./imagens/logo 1.png" alt="LabEscola logo" id="logo">
-        </a>
         <nav class="nav-header">
-            <ul>
-                <li class="li-header"><a href="./index.html">Home</a></li>
-                <li class="li-header"><a href="./cursos.html">Cursos</a></li>
-                <li class="li-header"><a href="./contato.html">Contato</a></li>
-                <li class="li-header"><a href="./area-adm-turmas.html">Area ADM</a></li>
-            </ul>
+
+            <div class="nav-logo">
+                <a href="./index.html">
+                    <img src="./imagens/logo 1.png" alt="LabEscola logo" id="logo">
+                </a>
+            </div>
+
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="./index.html">Home</a></li>
+                    <li class="nav-item"><a href="./cursos.html">Cursos</a></li>
+                    <li class="nav-item"><a href="./contato.html">Contato</a></li>
+                    <li class="nav-item"><a href="./area-adm-turmas.html">Area ADM</a></li>
+                </ul>
+            </div>
+            
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="./imagens/menu-icon-button-7.png" alt=""></button>
+            </div>
         </nav>
+
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="./index.html">Home</a></li>
+                <li class="nav-item"><a href="./cursos.html">Cursos</a></li>
+                <li class="nav-item"><a href="./contato.html">Contato</a></li>
+                <li class="nav-item"><a href="./area-adm-turmas.html">Area ADM</a></li>
+            </ul>
+        </div>
     </header>
 
-    <main>
-        <nav>
 
+    <!-- MAIN -->
+    <main class="main-adm-financeiro">
+
+        <nav class="nav-adm">
+            <h1><a href="./area-adm-turmas.html">Turmas</a></h1>
+            <h1><a href="./area-adm-matriculas.html">Matriculas</a></h1>
+            <h1 class="nav-destaque"><a href="./area-adm-financeiro.html">Finaneiro Alunos</a></h1>
         </nav>
-        <section>
 
+        <section class="section-adm-financeiro">
+
+            <div class="div-financeiro">
+                <form class="form-financeiro" action="#">
+
+                    <h1 class="form-financeiro-h1">Matrículas</h1>
+
+                    <label class="form-financeiro-label" for="curso-box-financeiro">Curso</label>
+                    <input type="text" name="curso-financeiro" id="curso-box-financeiro">
+
+                    <p class="add-curso"><u><a href="#">
+                                Adicionar outro curso</a></u>
+                    </p>
+
+                    <label class="form-financeiro-label" for="nparcela-box-financeiro">Número de parcelas</label>
+                    <input type="number" name="nparcela-financeiro" id="nparcela-box-financeiro">
+
+                    <button id="botao-ver-valor" type="submit">Ver Valor</button>
+                </form>
+
+                <div class="div-valor">
+                    <h1>Valor</h1>
+                    <p>Desconto de 20%. Parcelas de 2x de R$1880.00</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section-adm-relatorio">
+            <div class="div-relatorio">
+                <form class="form-relatorio" action="#">
+
+                    <h1 class="form-relatorio-h1">Relatório Aluno</h1>
+
+                    <label class="form-relatorio-label" for="nome-box-relatorio">Nome</label>
+                    <input type="text" name="nome-relatorio" id="nome-box-relatorio">
+
+                    <button id="botao-relatorio" type="submit">Ver Valor</button>
+                </form>
+
+            </div>
+
+            <div class="div-aluno">
+            <p>Aluno: Chris Evans</p>
+            <p>Turma: Hipatica</p>
+            <p>Curso: Javascript
+            </p>
+            <p>Valor total: R$900
+            </p>
+            <p>Valor parcela: R$100</p>
+            <p>N.º parcelas: 9</p>
+            </div>
+            
         </section>
 
     </main>

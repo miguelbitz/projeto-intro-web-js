@@ -298,3 +298,17 @@ const relatorioEstudante = (funcaoBuscarEstudante) => {
 }
 
 console.log(relatorioEstudante(buscarEstudante("halle berry")))
+
+
+
+function menuShow(){
+    let menuMobile = document.querySelector('.mobile-menu')
+
+    if(menuMobile.classList.contains('open')){
+        menuMobile.classList.remove('open')
+        document.querySelector('.icon').src = "./imagens/menu-icon-button-7.png"
+    }else{
+        menuMobile.classList.add('open')
+        document.querySelector('.icon').src = "./imagens/menu-icon-button-click.png"
+    }
+}

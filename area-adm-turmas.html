@@ -14,17 +14,36 @@
 
     <!-- HEADER -->
     <header>
-        <a href="./index.html">
-            <img src="./imagens/logo 1.png" alt="LabEscola logo" id="logo">
-        </a>
         <nav class="nav-header">
-            <ul>
-                <li class="li-header"><a href="./index.html">Home</a></li>
-                <li class="li-header"><a href="./cursos.html">Cursos</a></li>
-                <li class="li-header"><a href="./contato.html">Contato</a></li>
-                <li class="li-header"><a href="./area-adm-turmas.html">Area ADM</a></li>
-            </ul>
+
+            <div class="nav-logo">
+                <a href="./index.html">
+                    <img src="./imagens/logo 1.png" alt="LabEscola logo" id="logo">
+                </a>
+            </div>
+
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="./index.html">Home</a></li>
+                    <li class="nav-item"><a href="./cursos.html">Cursos</a></li>
+                    <li class="nav-item"><a href="./contato.html">Contato</a></li>
+                    <li class="nav-item"><a href="./area-adm-turmas.html">Area ADM</a></li>
+                </ul>
+            </div>
+            
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="./imagens/menu-icon-button-7.png" alt=""></button>
+            </div>
         </nav>
+
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="./index.html">Home</a></li>
+                <li class="nav-item"><a href="./cursos.html">Cursos</a></li>
+                <li class="nav-item"><a href="./contato.html">Contato</a></li>
+                <li class="nav-item"><a href="./area-adm-turmas.html">Area ADM</a></li>
+            </ul>
+        </div>
     </header>
 
     <!-- MAIN -->
@@ -54,7 +73,8 @@
 
             <div class="grid-turmas2">
 
-                <div class="div-turmas">Clarke</div>
+                <div class="div-turmas">Clarke
+                </div>
                 <div class="div-turmas">Blackwell</div>
                 <div class="div-turmas">Elion</div>
                 <div class="div-turmas">Burnell</div>

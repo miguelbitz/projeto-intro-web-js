@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financeiro - LabEscola</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav class="nav-header">
+
+            <div class="nav-logo">
+                <a href="./index.html">
+                    <img src="./imagens/logo 1.png" alt="LabEscola logo" id="logo">
+                </a>
+            </div>
+
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="./index.html">Home</a></li>
+                    <li class="nav-item"><a href="./cursos.html">Cursos</a></li>
+                    <li class="nav-item"><a href="./contato.html">Contato</a></li>
+                    <li class="nav-item"><a href="./area-adm-turmas.html">Area ADM</a></li>
+                </ul>
+            </div>
+            
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="./imagens/menu-icon-button-7.png" alt=""></button>
+            </div>
+        </nav>
+
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="./index.html">Home</a></li>
+                <li class="nav-item"><a href="./cursos.html">Cursos</a></li>
+                <li class="nav-item"><a href="./contato.html">Contato</a></li>
+                <li class="nav-item"><a href="./area-adm-turmas.html">Area ADM</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="main-adm-financeiro">
+
+        <nav class="nav-adm">
+            <h1><a href="./area-adm-turmas.html">Turmas</a></h1>
+            <h1><a href="./area-adm-matriculas.html">Matriculas</a></h1>
+            <h1 class="nav-destaque"><a href="./area-adm-financeiro.html">Finaneiro Alunos</a></h1>
+        </nav>
+
+        <section class="section-adm-financeiro">
+
+            <div class="div-financeiro">
+                <form class="form-financeiro" action="#">
+
+                    <h1 class="form-financeiro-h1">Matrículas</h1>
+
+                    <label class="form-financeiro-label" for="curso-box-financeiro">Curso</label>
+                    <input type="text" name="curso-financeiro" id="curso-box-financeiro">
+
+                    <p class="add-curso"><u><a href="#">
+                                Adicionar outro curso</a></u>
+                    </p>
+
+                    <label class="form-financeiro-label" for="nparcela-box-financeiro">Número de parcelas</label>
+                    <input type="number" name="nparcela-financeiro" id="nparcela-box-financeiro">
+
+                    <button id="botao-ver-valor" type="submit">Ver Valor</button>
+                </form>
+
+                <div class="div-valor">
+                    <h1>Valor</h1>
+                    <p>Desconto de 20%. Parcelas de 2x de R$1880.00</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section-adm-relatorio">
+            <div class="div-relatorio">
+                <form class="form-relatorio" action="#">
+
+                    <h1 class="form-relatorio-h1">Relatório Aluno</h1>
+
+                    <label class="form-relatorio-label" for="nome-box-relatorio">Nome</label>
+                    <input type="text" name="nome-relatorio" id="nome-box-relatorio">
+
+                    <button id="botao-relatorio" type="submit">Ver Valor</button>
+                </form>
+
+            </div>
+
+            <div class="div-aluno">
+            <p>Aluno: Chris Evans</p>
+            <p>Turma: Hipatica</p>
+            <p>Curso: Javascript
+            </p>
+            <p>Valor total: R$900
+            </p>
+            <p>Valor parcela: R$100</p>
+            <p>N.º parcelas: 9</p>
+            </div>
+            
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="imagem-footer">
+            <img src="./imagens/Frame 2.png" alt="imagem-footer">
+        </div>
+
+        <nav class="nav-footer">
+
+            <div>
+                <h2>Endereço</h2>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.996414202162!2d-46.70069624890372!3d-23.568572267669758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57a7c7ace4c3%3A0x586759cab9b5c95a!2sR.%20Pais%20Leme%2C%20215%20-%20Pinheiros%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005424-150!5e0!3m2!1sen!2sbr!4v1672258425582!5m2!1sen!2sbr"
+                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div>
+                <h2>Links</h2>
+                <p><a href="./index.html">Home</a></p>
+                <p><a href="./cursos.html">Cursos</a></p>
+                <p><a href="#">Blog</a></p>
+                <p><a href="./contato.html">Fale conosco</a></p>
+                <p><a href="#">Termos e condições</a></p>
+                <p><a href="#">Política de privacidade</a></p>
+                <p><a href="#">FAQ</a></p>
+
+            </div>
+
+            <div>
+                <h2>Redes Sociais</h2>
+
+                <div id="redes-sociais">
+
+                    <a href="#"><img src="./imagens/icon-twitter 1.png" alt="logo-twitter"></a>
+
+
+
+                    <a href="#"><img src="./imagens/icon-linkedin 1.png" alt="logo-linkedin"></a>
+
+
+                    <a href="#"><img src="./imagens/icon-fb 1.png" alt="logo-facebook"></a>
+
+                    <a href="#"><img src="./imagens/icon-ig 1.png" alt="logo-instagram"></a>
+
+                </div>
+            </div>
+
+            <div>
+                <h2>Área Restrita</h2>
+                <p><a href="#">Área administrativa</a></p>
+                <p><a href="#">Espaço do aluno</a></p>
+            </div>
+
+        </nav>
+
+
+    </footer>
+
+</body>
+
+</html>

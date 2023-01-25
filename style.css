@@ -168,7 +168,7 @@ header {
         padding-right: 3rem;
     }
 
-    .nav-item{
+    .nav-item {
         background-color: white;
         margin-top: -0.5rem;
         margin-left: 30rem;
@@ -181,14 +181,14 @@ header {
 
 /* HEADER CELULAR */
 @media screen and (max-device-width : 579px) {
-    #logo{
+    #logo {
         width: 250px;
     }
 
-    .icon{
+    .icon {
         width: 50px;
     }
-    
+
     header {
         background-color: white;
         width: 100vw;
@@ -265,7 +265,7 @@ header {
         padding-right: 3rem;
     }
 
-    .nav-item{
+    .nav-item {
         background-color: white;
         margin-top: -0.5rem;
         margin-left: 15rem;
@@ -341,7 +341,7 @@ footer {
         align-items: flex-start;
     }
 
-    #mapa{
+    #mapa {
         width: 300px;
     }
 }
@@ -350,7 +350,7 @@ footer {
 /* ------------SECTION 1---------- */
 .whats-logo-home {
     position: fixed;
-    margin-top: 17vh;
+    margin-top: 13vh;
     margin-left: 42vw;
     width: 70px;
 
@@ -382,8 +382,8 @@ footer {
 }
 
 #botao-home {
-    width: 22vw;
-    height: 8vh;
+    width: 450px;
+    height: 79px;
     margin-top: 7vh;
     background-color: black;
     color: white;
@@ -396,6 +396,12 @@ footer {
 #botao-home a {
     text-decoration: none;
     color: white;
+    width: 450px;
+    height: 79px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 /* ------------SECTION 2---------- */
@@ -546,11 +552,16 @@ footer {
 #botao-curso a {
     color: white;
     text-decoration: none;
+    width: 450px;
+    height: 79px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .whats-logo-cursos {
     position: fixed;
-    margin-top: 10vh;
+    margin-top: 6vh;
     margin-left: 68.5vw;
     width: 70px;
 }
@@ -603,7 +614,7 @@ footer {
 /* ------------SECTION 1---------- */
 .whats-logo-contato {
     position: fixed;
-    margin-top: 2vh;
+    margin-top: -3vh;
     margin-left: 42vw;
     width: 70px;
 
@@ -670,6 +681,7 @@ footer {
     height: 159.23px;
     border: 1.40915px solid #0E0E0E;
     border-radius: 2.81829px;
+    resize: vertical;
 }
 
 #botao-contato {
@@ -702,7 +714,7 @@ footer {
     background-color: black;
     color: #707070;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 14px;
     line-height: 5rem;
     padding-top: 2rem;
 }
@@ -729,37 +741,60 @@ footer {
 .section-adm-turmas {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 1.5rem;
-    margin-top: -5rem;
+    height: 90%;
 }
 
-.grid-turmas1 {
-    display: flex;
-    gap: 1.5rem;
+#grid-turmas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    width: 1050px;
+    height: 474px;
+    gap: 2rem;
 }
 
-.grid-turmas2 {
-    display: flex;
-    gap: 1.5rem;
+#grid-sozinho{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    width: 1050px;
+    height: 474px;
+    gap: 2rem;
 }
 
 .div-turmas {
     display: flex;
-    width: 240px;
-    height: 223px;
+    flex-wrap: wrap;
+    min-width: 240px;
+    min-height: 223px;
     background: #FFFFFF;
     border-radius: 12px;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 16px;
+    line-height: 29px;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
+    padding: 1rem;
+}
+
+.div-turmas h1 {
+    display: flex;
+    justify-content: center;
 }
 
 .buscar-turma {
     display: flex;
-    padding-bottom: 6rem;
-
+    justify-content: center;
+    margin-top: -7rem;
+    margin-bottom: 7rem;
 }
 
 .buscar-turma input::placeholder {
@@ -830,37 +865,25 @@ footer {
     height: 49.59px;
     font-size: 1rem;
     line-height: 24px;
+    pointer-events: visible;
 }
 
-#nome-box-matricular {
+#nome-box-matricular, #curso-box-matricular, #nparcela-box-matricular {
     width: 330px;
     height: 36px;
     border: none;
     border-radius: 4px;
 }
 
-#curso-box-matricular {
+#selecionar-curso, #selecionar-turma{
     width: 330px;
     height: 36px;
     border: none;
     border-radius: 4px;
+    font-size: 18px;
 }
 
-#turma-box-matricular {
-    width: 330px;
-    height: 36px;
-    border: none;
-    border-radius: 4px;
-}
-
-#nparcela-box-matricular {
-    width: 330px;
-    height: 36px;
-    border: none;
-    border-radius: 4px;
-}
-
-.section-aluno-matriculado {
+#section-aluno-matriculado {
     justify-self: start;
     padding-top: 3rem;
 }

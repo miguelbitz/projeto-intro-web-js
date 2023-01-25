@@ -1,6 +1,4 @@
-//-----------------------------------------------------------------------
-//----------------------------ARRAY DE OBJETOS---------------------------
-//-----------------------------------------------------------------------
+//ARRAY DE OBJETOS
 
 //CURSOS
 const cursos = [
@@ -28,75 +26,75 @@ const cursos = [
 //TURMAS
 const turmas = [
     {
-        nome: "Hipátia",
+        turma: "Hipátia",
         curso: "JavaScript",
         inicio: "2022/11/30",
         termino: "2023/01/30",
         numAlunos: 150,
-        pediodo: "Noturno",
+        periodo: "Noturno",
         concluida: false
     },
     {
-        nome: "Sibyla",
+        turma: "Sibyla",
         curso: "JavaScript",
         inicio: "2022/10/30",
         termino: "2022/12/30",
         numAlunos: 200,
-        pediodo: "Integral",
+        periodo: "Integral",
         concluida: false
     },
     {
-        nome: "Curie",
+        turma: "Curie",
         curso: "HTML e CSS",
         inicio: "2022/09/15",
         termino: "2022/10/15",
         numAlunos: 180,
-        pediodo: "Noturno",
+        periodo: "Noturno",
         concluida: true
     },
     {
-        nome: "Zhenyi",
+        turma: "Zhenyi",
         curso: "HTML e CSS",
         inicio: "2022/11/01",
         termino: "2022/12/01",
         numAlunos: 80,
-        pediodo: "Integral",
+        periodo: "Integral",
         concluida: false
     },
     {
-        nome: "Clarke",
+        turma: "Clarke",
         curso: "HTML e CSS",
         inicio: "2022/07/04",
         termino: "2022/08/04",
         numAlunos: 200,
-        pediodo: "Noturno",
+        periodo: "Noturno",
         concluida: true
     },
     {
-        nome: "Blackwell",
+        turma: "Blackwell",
         curso: "APIs Rest",
         inicio: "2022/03/20",
         termino: "2022/09/20",
         numAlunos: 100,
-        pediodo: "Integral",
+        periodo: "Integral",
         concluida: true
     },
     {
-        nome: "Elion",
+        turma: "Elion",
         curso: "APIsRest",
         inicio: "2022/01/12",
         termino: "2022/07/12",
         numAlunos: 200,
-        pediodo: "Noturno",
+        periodo: "Noturno",
         concluida: true
     },
     {
-        nome: "Burnell",
+        turma: "Burnell",
         curso: "APIsRest",
         inicio: "2022/10/18",
         termino: "2023/04/18",
         numAlunos: 90,
-        pediodo: "Integral",
+        periodo: "Integral",
         concluida: false
     }
 ]
@@ -131,23 +129,31 @@ const estudantes = [
         parcelas: 500
     }
 ]
-//--------------------------------------------------------------------------
-//----------------------------------FUNCOES---------------------------------
-//--------------------------------------------------------------------------
 
-//------------------------------FUNCAO BUSCAR----------------------------------
 
-//USANDO WHILE
+//------------------------------
+//FUNCAO BUSCAR
+//----------------------------------
 
+
+//-------------------------------
 //BUSCAR CURSO
-const buscarCurso = (nomeCurso) => {
-    let procurar = cursos.find(procurar => procurar.curso.toLowerCase() === nomeCurso.toLowerCase())
+//-------------------------------
+const buscarCurso = () => {
+
+    const inputCurso = document.getElementById('curso-box-financeiro').value.toLowerCase()
+
+    let procurar = cursos.find(procurar => procurar.curso.toLowerCase().includes(inputCurso))
+
+    document.getElementById('curso-box-financeiro').value = ""
 
     if (procurar) {
         return procurar
     } else {
         return 'Curso nao encontrado'
     }
+
+
     /*     for (i = 0; i < cursos.length; i++) {
             if (cursos[i].curso.toLocaleLowerCase() === nomeCurso) {
                 return cursos[i]
@@ -165,40 +171,74 @@ const buscarCurso = (nomeCurso) => {
         return 'Aluno nao encontrado' */
 }
 
-console.log(buscarCurso("html e css"))
-
+//-------------------------------
 //BUSCAR TURMA
-const buscarTurma = (nomeTurma) => {
-    const filtrarTurma = turmas.filter(turmaProcurada => turmaProcurada.nome.toLowerCase() === nomeTurma.toLowerCase())// filtra o nome da turma e coloca dentro da variavel filtrar turma, essa variavel vira um array com o resultado
+//-------------------------------
+
+const buscarTurma = () => {
+
+    const inputTurma = document.getElementById('buscar-box').value.toLowerCase()
+
+    const filtrarTurma = turmas.filter(turmaProcurada => turmaProcurada.turma.toLowerCase().includes(inputTurma))// filtra o nome da turma e coloca dentro da variavel filtrar turma, essa variavel vira um array com o resultado
 
 
     //se o tamanho do array for maior que zero entao retorna  a variavel filtrarTurma, se nao achar, retorna turma nao encontrada
-    filtrarTurma.length > 0 ? console.log(filtrarTurma) : console.log('Turma nao encontrada')
+    filtrarTurma.length > 0 ? gerarCard(filtrarTurma) : gerarCard(turmas)
+
+
+    document.getElementById('buscar-box').value = ""
+
+    return filtrarTurma
 
 }
 
-buscarTurma("elion")
 
+const buscarTurmaMatricula = () => {
+
+    const inputTurma = document.getElementById('turma-box-matricular').value.toLowerCase()
+
+    const filtrarTurma = turmas.filter(turmaProcurada => turmaProcurada.turma.toLowerCase().includes(inputTurma))// 
+
+    return filtrarTurma
+
+}
+//-------------------------------
 //BUSCAR ESTUDANTE
-const buscarEstudante = (nomeEstudante) => {
+//-------------------------------
+const buscarEstudante = () => {
+
+    const inputEstudante = document.getElementById('nome-box-relatorio').value.toLowerCase()
+
+    document.getElementById('nome-box-relatorio').value = ""
 
     for (i = 0; i < estudantes.length; i++) {
-        if (estudantes[i].estudante.toLowerCase().includes(nomeEstudante.toLowerCase()) !== false) {
+        if (estudantes[i].estudante.toLowerCase().includes(inputEstudante) !== false) {
             return estudantes[i]
         }
     }
 
     return 'Aluno nao encontrado'
+
 }
 
-console.log(buscarEstudante("halle"))
+//-------------------------------
+//FUNCAO MATRICULAR
+//--------------------------------
+
+const matricular = () => {
+
+    const nome = document.getElementById('nome-box-matricular').value
+    const curso = document.getElementById('selecionar-curso').value
+    const turma = document.getElementById('selecionar-turma').value
+    const nParcelas = document.getElementById('nparcela-box-matricular').value
+    const matricula = document.getElementById('section-aluno-matriculado')
+
+    console.log(nome)
+    console.log(curso)
+    console.log(turma)
+    console.log(nParcelas)
 
 
-//-------------------------------FUNCAO MATRICULAR--------------------------------
-
-const matricular = (nome, curso, turma, nParcelas) => {
-
-    //valor do curso para o array do novo estudante usando while
     let i = 0
 
     while (curso !== cursos[i]["curso"]) {
@@ -219,15 +259,47 @@ const matricular = (nome, curso, turma, nParcelas) => {
 
     estudantes.push(novoEstudante)
 
-    console.log(`Aluno Matriculado:\nNome: ${novoEstudante.estudante}\nCurso: ${novoEstudante.curso}\nTurma: ${novoEstudante.turma}`)
+    const divMatricular = `<div class="aluno-matriculado-h1">
+                <h1> Aluno Matriculado </h1>
+                <img src="./imagens/Vector.png">
+            </div>
+            <div class="aluno-matriculado">
+                <p>Aluno Matriculado</p>
+                <p>Nome: ${nome}</p>
+                <p>Curso: ${curso}</p>
+                <p>Turma: ${turma}</p>
+            </div>`
+
+
+    console.log(divMatricular)
+    console.log(estudantes)
+
+    return matricula.innerHTML = divMatricular
+    
+}
+
+//------------------------------
+//FUNCAO ALTERAR CURSO DA MATRICULA
+//-------------------------------
+
+const alterarCurso = () => {
+    let selecionarCurso = document.getElementById('selecionar-curso')
+    let turma = document.getElementById('selecionar-turma')
+
+    if (selecionarCurso.value === "HTML e CSS") {
+        return turma.innerHTML = "<option>Curie</option><option>Zhenyi</option><option>Clarke</option>"
+    } else if (selecionarCurso.value === "JavaScript") {
+        return turma.innerHTML = "<option>Hipática</option><option>Sibyla</option>"
+    } else {
+        return turma.innerHTML = "<option>Blackwell</option><option>Elion</option><option>Burnell</option>"
+    }
 
 }
 
 
-matricular("Miguel Alves", "JavaScript", "Clarke", 2)
-console.log(estudantes)
-
-//----------------------------FUNCAO CARRINHO CURSOS-------------------------------
+//------------------------------
+//FUNCAO CARRINHO CURSOS
+//-------------------------------
 
 const carrinhoCursos = []
 
@@ -237,14 +309,10 @@ const adicionarCarrinho = (funcaoBuscarCurso) => {
     return carrinhoCursos
 }
 
-adicionarCarrinho(buscarCurso("javascript"))
-adicionarCarrinho(buscarCurso("html e css"))
-adicionarCarrinho(buscarCurso("apisrest"))
 
-console.log(carrinhoCursos)
-
-//-------------------------FUNCAO PARCELAR CURSO COMPLETA--------------------------
-//USANDO IF + FOR + SWITCH CASE
+//-------------------------
+//FUNCAO PARCELAR CURSO COMPLETA
+//--------------------------
 
 const parcelarCurso = (nParcelas, carrinhoCursos) => {
 
@@ -288,27 +356,78 @@ const parcelarCurso = (nParcelas, carrinhoCursos) => {
     }
 }
 
-
-parcelarCurso(2, carrinhoCursos)
-
-//-------------------------------FUNCAO RELATORIO ESTUDANTE--------------------------------
+//-------------------------------
+//FUNCAO RELATORIO ESTUDANTE
+//--------------------------------
 
 const relatorioEstudante = (funcaoBuscarEstudante) => {
     return `Aluno: ${funcaoBuscarEstudante.estudante}\nTurma: ${funcaoBuscarEstudante.turma}\nCurso: ${funcaoBuscarEstudante.curso}\nValor Total: ${funcaoBuscarEstudante.valor}\nValor Parcela: ${funcaoBuscarEstudante.parcelas}\nNumero de Parcelas: ${funcaoBuscarEstudante.nParcelas}`
 }
 
-console.log(relatorioEstudante(buscarEstudante("halle berry")))
+//--------------------------------
+//FUNCAO GERAR CARD E GRID
+//--------------------------------
 
+function criarGridTurma() {
+    let resultado = ''
 
+    const gridTurma = document.getElementById('grid-turmas')
+    const turma = document.getElementById('buscar-box').value
 
-function menuShow(){
+    if (!turma) {
+        resultado = turmas
+    } else {
+        resultado = buscarTurma(turma)
+    }
+
+    gridTurma.innerHTML = resultado.map((elemento) => {
+        return gerarCard(elemento.turma, elemento.curso, elemento.inicio, elemento.termino, elemento.numAlunos, elemento.periodo, elemento.concluida)
+    }).join('')
+
+}
+
+function gerarCard(turma, curso, inicio, termino, numAlunos, periodo, concluido) {
+
+    return `
+            <div class="div-turmas">
+                <h1>${turma}</h1>
+                <p >Curso: <span>${curso}</p>
+                <p >Inicio: ${inicio}</p>
+                <p >Término: ${termino}</p>
+                <p >Número de Alunos: ${numAlunos}</p>
+                <p class='card-caption'>Período: ${periodo}</p>
+                <p >Concluído: ${concluido ? "Sim" : "Não"}</p>
+            </div>
+        `
+
+}
+
+//--------------------------------
+//RESPONSIVIDADE
+//--------------------------------
+
+function menuShow() {
     let menuMobile = document.querySelector('.mobile-menu')
 
-    if(menuMobile.classList.contains('open')){
+    if (menuMobile.classList.contains('open')) {
         menuMobile.classList.remove('open')
         document.querySelector('.icon').src = "./imagens/menu-icon-button-7.png"
-    }else{
+    } else {
         menuMobile.classList.add('open')
         document.querySelector('.icon').src = "./imagens/menu-icon-button-click.png"
     }
 }
+
+//--------------------------------
+//OUTROS
+//--------------------------------
+
+
+//ativando botao com o ENTER
+document.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+        const btn = document.querySelector("#botao-buscar-turma")
+
+        btn.click();
+    }
+})

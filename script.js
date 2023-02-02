@@ -130,47 +130,6 @@ const estudantes = [
     }
 ]
 
-
-//------------------------------
-//FUNCAO BUSCAR
-//----------------------------------
-
-
-//-------------------------------
-//BUSCAR CURSO
-//-------------------------------
-const buscarCurso = () => {
-
-    const inputCurso = document.getElementById('curso-box-financeiro').value.toLowerCase()
-
-    let procurar = cursos.find(procurar => procurar.curso.toLowerCase().includes(inputCurso))
-
-    document.getElementById('curso-box-financeiro').value = ""
-
-    if (procurar) {
-        return procurar
-    } else {
-        return 'Curso nao encontrado'
-    }
-
-
-    /*     for (i = 0; i < cursos.length; i++) {
-            if (cursos[i].curso.toLocaleLowerCase() === nomeCurso) {
-                return cursos[i]
-            }
-        }
-    
-        return 'Aluno nao encontrado'
-    } */
-    /*     for (i in cursos) {
-            if (cursos[i].curso.toLowerCase() === nomeCurso.toLowerCase()) {
-                return cursos[i]
-            }
-        }
-    
-        return 'Aluno nao encontrado' */
-}
-
 //-------------------------------
 //BUSCAR TURMA
 //-------------------------------
@@ -180,7 +139,6 @@ const buscarTurma = () => {
     const inputTurma = document.getElementById('buscar-box').value.toLowerCase()
 
     const filtrarTurma = turmas.filter(turmaProcurada => turmaProcurada.turma.toLowerCase().includes(inputTurma))// filtra o nome da turma e coloca dentro da variavel filtrar turma, essa variavel vira um array com o resultado
-
 
     //se o tamanho do array for maior que zero entao retorna  a variavel filtrarTurma, se nao achar, retorna turma nao encontrada
     filtrarTurma.length > 0 ? gerarCard(filtrarTurma) : gerarCard(turmas)
@@ -193,51 +151,17 @@ const buscarTurma = () => {
 }
 
 
-const buscarTurmaMatricula = () => {
-
-    const inputTurma = document.getElementById('turma-box-matricular').value.toLowerCase()
-
-    const filtrarTurma = turmas.filter(turmaProcurada => turmaProcurada.turma.toLowerCase().includes(inputTurma))// 
-
-    return filtrarTurma
-
-}
-//-------------------------------
-//BUSCAR ESTUDANTE
-//-------------------------------
-const buscarEstudante = () => {
-
-    const inputEstudante = document.getElementById('nome-box-relatorio').value.toLowerCase()
-
-    document.getElementById('nome-box-relatorio').value = ""
-
-    for (i = 0; i < estudantes.length; i++) {
-        if (estudantes[i].estudante.toLowerCase().includes(inputEstudante) !== false) {
-            return estudantes[i]
-        }
-    }
-
-    return 'Aluno nao encontrado'
-
-}
-
-//-------------------------------
+//--------------------------------
 //FUNCAO MATRICULAR
 //--------------------------------
 
 const matricular = () => {
 
-    const nome = document.getElementById('nome-box-matricular').value
-    const curso = document.getElementById('selecionar-curso').value
-    const turma = document.getElementById('selecionar-turma').value
-    const nParcelas = document.getElementById('nparcela-box-matricular').value
-    const matricula = document.getElementById('section-aluno-matriculado')
-
-    console.log(nome)
-    console.log(curso)
-    console.log(turma)
-    console.log(nParcelas)
-
+    let nome = document.getElementById('nome-box-matricular').value
+    let curso = document.getElementById('selecionar-curso').value
+    let turma = document.getElementById('selecionar-turma').value
+    let nParcelas = document.getElementById('nparcela-box-matricular').value
+    let matricula = document.getElementById('section-aluno-matriculado')
 
     let i = 0
 
@@ -271,16 +195,19 @@ const matricular = () => {
             </div>`
 
 
-    console.log(divMatricular)
-    console.log(estudantes)
+
+    document.getElementById('nome-box-matricular').value = ""
+    document.getElementById('selecionar-curso').value = ""
+    document.getElementById('selecionar-turma').value = ""
+    document.getElementById('nparcela-box-matricular').value = ""
 
     return matricula.innerHTML = divMatricular
-    
+
 }
 
-//------------------------------
+//---------------------------------
 //FUNCAO ALTERAR CURSO DA MATRICULA
-//-------------------------------
+//---------------------------------
 
 const alterarCurso = () => {
     let selecionarCurso = document.getElementById('selecionar-curso')
@@ -296,25 +223,110 @@ const alterarCurso = () => {
 
 }
 
+//-------------------------------
+//BUSCAR CURSO
+//-------------------------------
 
-//------------------------------
+
+const buscarCurso = () => {
+
+    //teste com checkbox
+    /* const inputCurso = document.getElementsByName('linguagem-curso')
+    
+    console.log(inputCurso.item)
+    
+    let procurar
+    
+    procurar = cursos.find(procurar => procurar.curso.toLowerCase().includes(inputCurso))
+
+    console.log(procurar)
+    if (procurar) {
+        return procurar
+    } else {
+        return 'Curso nao encontrado'
+    } */
+
+    //buscarCurso usando select
+
+    const inputCurso = document.getElementById('curso-box-financeiro').value.toLowerCase()
+
+    let procurar = cursos.find(procurar => procurar.curso.toLowerCase().includes(inputCurso))
+
+    if (procurar) {
+        return procurar
+    } else {
+        return 'Curso nao encontrado'
+    }
+
+
+
+    //outros metodos de busca
+    /*     for (i = 0; i < cursos.length; i++) {
+            if (cursos[i].curso.toLocaleLowerCase() === nomeCurso) {
+                return cursos[i]
+            }
+        }
+    
+        return 'Aluno nao encontrado'
+    } */
+    /*     for (i in cursos) {
+            if (cursos[i].curso.toLowerCase() === nomeCurso.toLowerCase()) {
+                return cursos[i]
+            }
+        }
+    
+        return 'Aluno nao encontrado' */
+}
+
+//-------------------------------
 //FUNCAO CARRINHO CURSOS
 //-------------------------------
 
-const carrinhoCursos = []
+//adicionarCarrinho com o checkbox
+/* let carrinhoCursos = []
+const adicionarCarrinho = (funcaoBuscarCurso) => {
+    const addIcon = document.querySelector('.check-icon')
+
+    addIcon.innerHTML = `<img class="carrinho-icon" src="./imagens/Vector.png">`
+
+    let cursos = document.getElementsByName('linguagem-curso')
+
+    const valorCurso = funcaoBuscarCurso.valor
+
+    for (i = 0; i < cursos.length; i++) {
+        if (cursos[i].checked) {
+            carrinhoCursos.push(valorCurso) 
+        }
+    }
+
+    console.log(carrinhoCursos)
+
+    return carrinhoCursos
+} */
+
+
+//adicionarCarrinho com o select
+let carrinhoCursos = []
 
 const adicionarCarrinho = (funcaoBuscarCurso) => {
+    const addIcon = document.querySelector('.check-icon')
+
+    addIcon.innerHTML = `<img class="carrinho-icon" src="./imagens/Vector.png">`
+
     const valorCurso = funcaoBuscarCurso.valor
     carrinhoCursos.push(valorCurso)
     return carrinhoCursos
 }
 
-
-//-------------------------
+//-----------------------------
 //FUNCAO PARCELAR CURSO COMPLETA
-//--------------------------
+//-----------------------------
 
-const parcelarCurso = (nParcelas, carrinhoCursos) => {
+const parcelarCurso = () => {
+
+    let nParcelas = Number(document.getElementById('nparcela-box-financeiro').value)
+
+    let mostrarValor = document.getElementById('mostrar-valor')
 
     let desconto = 0
     let valorTotal = 0
@@ -334,34 +346,90 @@ const parcelarCurso = (nParcelas, carrinhoCursos) => {
             desconto = 0
             break
         default:
-            console.log('Quantidade de cursos inválido')
-            break
+            mostrarValor.innerHTML = 'Quantidade de cursos inválido'
     }
-
-    //console.log(valorTotal)
 
     if (nParcelas < 3 && nParcelas > 0) {//desconto pela quantidade de parcelas
         desconto += 0.2
         valorDesconto = valorTotal - (valorTotal * desconto)
 
-        console.log(`O valor do pagamento é de R$${valorDesconto.toFixed(2)} com 20% de desconto, parcelado em ${nParcelas} de R$${(valorDesconto / nParcelas).toFixed(2)}`)
+        mostrarValor.innerHTML = `<h1>Valor</h1>
+        <p>O curso selecionado foi ${document.getElementById('curso-box-financeiro').value}.O valor do pagamento é de R$${valorDesconto.toFixed(2)} com 20% de desconto, parcelado em ${nParcelas} de R$${(valorDesconto / nParcelas).toFixed(2)}</p>`
 
-    } else if (nParcelas > 2) {
+    } else if (nParcelas > 2 && nParcelas < 13) {
         valorDesconto = valorTotal - (valorTotal * desconto)
 
-        console.log(`O valor do pagamento é de R$${valorDesconto.toFixed(2)}, parcelado em ${nParcelas} de R$${(valorDesconto / nParcelas).toFixed(2)}`)
+        mostrarValor.innerHTML = `<h1>Valor</h1>
+        <p>O curso selecionado foi ${document.getElementById('curso-box-financeiro').value}.O valor do pagamento é de R$${valorDesconto.toFixed(2)}, parcelado em ${nParcelas} de R$${(valorDesconto / nParcelas).toFixed(2)}</p>`
 
     } else {
-        console.log(`Quantidade de parcelas inválido`)
+        mostrarValor.innerHTML = `<p>Quantidade de parcelas inválido</p>`
     }
+
+    //limpar campos
+
+    carrinhoCursos = []
+
+    document.getElementById('nparcela-box-financeiro').value = ""
+
+    document.getElementById('curso-box-financeiro').value = "Selecione o curso"
+
+    //remover check-icon
+    let remover = document.querySelector(".carrinho-icon")
+
+    remover.remove()
+
 }
 
 //-------------------------------
+//BUSCAR ESTUDANTE
+//-------------------------------
+const buscarEstudante = () => {
+
+    let inputEstudante = document.getElementById('nome-box-relatorio').value.toLowerCase()
+
+    let procurar = estudantes.find(procurar => procurar.estudante.toLowerCase().includes(inputEstudante))
+
+    if (procurar) {
+        return procurar
+    } else {
+        document.getElementById('nome-box-relatorio').value = ""
+
+        document.getElementById('relatorio-aluno').innerHTML = `<p>Aluno não cadastrado </p>`
+    }
+
+    //usando for para procurar estudante
+    /* for (i = 0; i < estudantes.length; i++) {
+        if (estudantes[i].estudante.toLowerCase().includes(inputEstudante) !== false) {
+            return estudantes[i]
+        }
+    }
+
+    document.getElementById('relatorio-aluno').innerHTML = `<p>Aluno não cadastrado </p>` */
+}
+
+//--------------------------------
 //FUNCAO RELATORIO ESTUDANTE
 //--------------------------------
 
 const relatorioEstudante = (funcaoBuscarEstudante) => {
-    return `Aluno: ${funcaoBuscarEstudante.estudante}\nTurma: ${funcaoBuscarEstudante.turma}\nCurso: ${funcaoBuscarEstudante.curso}\nValor Total: ${funcaoBuscarEstudante.valor}\nValor Parcela: ${funcaoBuscarEstudante.parcelas}\nNumero de Parcelas: ${funcaoBuscarEstudante.nParcelas}`
+
+    let inputEstudante = document.getElementById('nome-box-relatorio').value.toLowerCase()
+
+    let relatorioAluno = document.getElementById('relatorio-aluno')
+
+    if (inputEstudante === "") {
+
+        relatorioAluno.innerHTML = `<p>Aluno não cadastrado </p>`
+
+    } else {
+        document.getElementById('nome-box-relatorio').value = ""
+
+        relatorioAluno.innerHTML = `<p>Aluno: ${funcaoBuscarEstudante.estudante}</p><p>Turma: ${funcaoBuscarEstudante.turma}</p><p>Curso: ${funcaoBuscarEstudante.curso}</p><p>Valor Total: ${funcaoBuscarEstudante.valor}</p><p>Valor Parcela: ${funcaoBuscarEstudante.parcelas}</p><p>Numero de Parcelas: ${funcaoBuscarEstudante.nParcelas}`
+    }
+
+
+
 }
 
 //--------------------------------
@@ -426,8 +494,10 @@ function menuShow() {
 //ativando botao com o ENTER
 document.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
-        const btn = document.querySelector("#botao-buscar-turma")
+        const btnBuscarTurma = document.querySelector("#botao-buscar-turma")
 
-        btn.click();
+        btnBuscarTurma.click();
     }
 })
+
+

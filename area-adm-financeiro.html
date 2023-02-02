@@ -8,6 +8,7 @@
     <title>Financeiro - LabEscola</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 
 <body>
@@ -30,7 +31,7 @@
                     <li class="nav-item"><a href="./area-adm-turmas.html">Área ADM</a></li>
                 </ul>
             </div>
-            
+
             <div class="mobile-menu-icon">
                 <button onclick="menuShow()"><img class="icon" src="./imagens/menu-icon-button-7.png" alt=""></button>
             </div>
@@ -60,25 +61,60 @@
 
             <div class="div-financeiro">
                 <form class="form-financeiro" action="#">
-
-                    <h1 class="form-financeiro-h1">Matrículas</h1>
+                    <h1 class="form-financeiro-h1">Financeiro</h1>
 
                     <label class="form-financeiro-label" for="curso-box-financeiro">Curso</label>
-                    <input type="text" name="curso-financeiro" id="curso-box-financeiro">
 
-                    <p class="add-curso"><u><a href="#">
-                                Adicionar outro curso</a></u>
-                    </p>
+                    <select class="selecionar-curso-fin" id="curso-box-financeiro">
+                        <option disabled selected hidden>Selecione o curso</option>
+                        <option>HTML e CSS</option>
+                        <option>JavaScript</option>
+                        <option>ApisRest</option>
+                    </select>
+
+                    <!-- <div class="card">
+                        <div class="content">
+                            <input type="checkbox" name="linguagem-curso" value="500" id="html-css" class="checkbox">
+                            <input type="checkbox" name="linguagem-curso" value="900" id="javascript" class="checkbox">
+                            <input type="checkbox" name="linguagem-curso" value="2000" id="apisrest" class="checkbox">
+
+                            <label for="html-css" class="box first">
+                                <div class="plan">
+                                    <span class="circle"></span>
+                                    <span class="yearly">HTML & CSS</span>
+                                </div>
+                                <span class="price">R$500,00</span>
+                            </label>
+                            <label for="javascript" class="box second">
+                                <div class="plan">
+                                    <span class="circle"></span>
+                                    <span class="yearly">JavaScript</span>
+                                </div>
+                                <span class="price">R$900,00</span>
+                            </label>
+                            <label for="apisrest" class="box third">
+                                <div class="plan">
+                                    <span class="circle"></span>
+                                    <span class="yearly">ApisRest</span>
+                                </div>
+                                <span class="price">R$2.000,00</span>
+                            </label>
+                        </div>
+                    </div> -->
+
+                    <div class="div-add-carrinho">
+                        <span onclick="adicionarCarrinho(buscarCurso())" id="add-carrinho"><u>Adicionar ao carrinho</u></span>
+                        <span class="check-icon" id="remover-icon"></span>
+                    </div>
 
                     <label class="form-financeiro-label" for="nparcela-box-financeiro">Número de parcelas</label>
-                    <input type="number" name="nparcela-financeiro" id="nparcela-box-financeiro">
+                    <input type="text" name="nparcela-financeiro" id="nparcela-box-financeiro">
 
-                    <button id="botao-ver-valor" type="submit">Ver Valor</button>
+                    <button onclick="parcelarCurso()" id="botao-ver-valor" type="submit">Ver Valor</button>
                 </form>
 
-                <div class="div-valor">
-                    <h1>Valor</h1>
-                    <p>Desconto de 20%. Parcelas de 2x de R$1880.00</p>
+                <div id="mostrar-valor" class="div-valor">
+
                 </div>
             </div>
         </section>
@@ -91,24 +127,14 @@
                     <h1 class="form-relatorio-h1">Relatório Aluno</h1>
 
                     <label class="form-relatorio-label" for="nome-box-relatorio">Nome</label>
-                    <input type="text" name="nome-relatorio" id="nome-box-relatorio">
+                    <input required type="text" name="nome-relatorio" id="nome-box-relatorio">
 
-                    <button onclick="buscarEstudante()" id="botao-relatorio" type="submit">Buscar</button>
+                    <button onclick="relatorioEstudante(buscarEstudante())" id="botao-relatorio" type="submit">Buscar</button>
                 </form>
 
             </div>
 
-            <div class="div-aluno">
-            <p>Aluno: Chris Evans</p>
-            <p>Turma: Hipatica</p>
-            <p>Curso: Javascript
-            </p>
-            <p>Valor total: R$900
-            </p>
-            <p>Valor parcela: R$100</p>
-            <p>N.º parcelas: 9</p>
-            </div>
-            
+            <div id="relatorio-aluno" class="div-aluno"></div>
         </section>
 
     </main>

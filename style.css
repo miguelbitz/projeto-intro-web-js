@@ -391,6 +391,7 @@ footer {
     font-weight: 700;
     font-size: 24px;
     line-height: 36px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 #botao-home a {
@@ -401,7 +402,10 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+#botao-home:hover{
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 1);
 }
 
 /* ------------SECTION 2---------- */
@@ -547,6 +551,7 @@ footer {
     font-weight: 700;
     font-size: 24px;
     line-height: 36px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 #botao-curso a {
@@ -557,6 +562,11 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+
+}
+
+#botao-curso:hover{
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 1);
 }
 
 .whats-logo-cursos {
@@ -693,6 +703,12 @@ footer {
     height: 55.66px;
     background: #F6C34A;
     border-radius: 6.34116px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#botao-contato:hover{
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 1);
 }
 
 /* ------------AREA-ADM-TURMAS----------- */
@@ -811,6 +827,7 @@ footer {
     width: 330px;
     height: 43px;
     border-radius: 4px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 #botao-buscar-turma {
@@ -823,7 +840,8 @@ footer {
     background-color: #0E0E0E;
     border-radius: 0px 4px 4px 0px;
     margin-left: -0.2vw;
-
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* ------------AREA-ADM-MATRICULAS-----------*/
@@ -866,6 +884,8 @@ footer {
     font-size: 1rem;
     line-height: 24px;
     pointer-events: visible;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 #nome-box-matricular, #curso-box-matricular, #nparcela-box-matricular {
@@ -875,7 +895,7 @@ footer {
     border-radius: 4px;
 }
 
-#selecionar-curso, #selecionar-turma{
+#selecionar-curso, #selecionar-turma, .selecionar-curso-fin{
     width: 330px;
     height: 36px;
     border: none;
@@ -944,6 +964,8 @@ footer {
     height: 49.59px;
     font-size: 16px;
     line-height: 24px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 #nome-box-relatorio {
@@ -968,18 +990,22 @@ footer {
 }
 
 
-.add-curso {
+#add-carrinho {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 21px;
+    cursor: pointer;
 }
 
-.add-curso a {
+#add-carrinho a {
     color: black;
     font-style: none;
 }
 
 .div-valor {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
     padding-top: 4rem;
 }
 
@@ -990,3 +1016,74 @@ footer {
 .section-adm-relatorio {
     justify-self: start;
 }
+
+.carrinho-icon{
+    height: 20px;
+}
+
+.div-carrinho-icon{
+    display: flex;
+    gap: 10px;
+}
+
+/* -----------CUSTOMS---------- */
+
+/* CARD FINANCEIRO CURSO */
+.card{
+    max-width: 350px;
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .card  label.box{
+    background: #ddd;
+    margin-top: 12px;
+    padding: 10px 12px;
+    display: flex;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  #html-css:checked ~ label.first,
+  #javascript:checked ~ label.second,
+  #apisrest:checked ~ label.third{
+    border-color: var(--corDestaque);
+    background: #ffd752;
+  }
+  .card  label.box:hover{
+    background: #ffe388;
+  }
+  .card  label.box .circle{
+    height: 22px;
+    width: 22px;
+    background: #ccc;
+    border: 5px solid transparent;
+    display: inline-block;
+    margin-right: 15px;
+    border-radius: 50%;
+    transition: all 0.25s ease;
+    box-shadow: inset -4px -4px 10px rgba(0, 0, 0, 0.2);
+  }
+  #html-css:checked ~ label.first .circle,
+  #javascript:checked ~ label.second .circle,
+  #apisrest:checked ~ label.third .circle{
+    border-color: var(--corDestaque);
+    background: #fff;
+  
+  }
+  .card  label.box .plan{
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+  .card input[type="radio"]{
+    display: none;
+  }
+
+  .checkbox{
+    display: none;
+  }

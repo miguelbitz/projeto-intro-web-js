@@ -346,6 +346,12 @@ footer {
     }
 }
 
+@media screen and (max-device-width : 1379px) {
+    .imagem-footer {
+        padding-left: 1.8rem;
+    }
+}
+
 /* --------------HOME------------- */
 /* ------------SECTION 1---------- */
 .whats-logo-home {
@@ -404,7 +410,7 @@ footer {
     align-items: center;
 }
 
-#botao-home:hover{
+#botao-home:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 1);
 }
 
@@ -445,6 +451,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
     width: 100%;
     height: 40em;
 }
@@ -467,8 +474,8 @@ footer {
     border-radius: 10px;
     justify-content: center;
     align-items: center;
-    margin: 0.8vw;
-    margin-top: -10vh;
+    /* margin: 0.8vw;
+    margin-top: -10vh; */
 }
 
 .section-h3 p {
@@ -488,6 +495,12 @@ footer {
 
 }
 
+@media screen and (max-device-width : 1379px) {
+    .section-h3 {
+        height: 60em;
+    }
+}
+
 /* --------------CURSOS------------- */
 /* ------------SECTION 1---------- */
 
@@ -496,7 +509,7 @@ footer {
     height: 92vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 30vh;
+    grid-template-rows: 2fr 30vh;
     justify-items: center;
     align-items: center;
     padding: 7% 10%;
@@ -510,9 +523,10 @@ footer {
     align-items: center;
     background-color: white;
     border-radius: 12px;
-    width: 387px;
-    height: 369px;
+    width: 24rem;
+    height: 23rem;
     gap: 2vw;
+    padding-top: -5rem;
 
 }
 
@@ -538,6 +552,8 @@ footer {
 }
 
 #botao-curso {
+    grid-row: 2/3;
+    grid-column: 2/3;
     margin-top: 4vw;
     display: flex;
     justify-content: center;
@@ -565,7 +581,7 @@ footer {
 
 }
 
-#botao-curso:hover{
+#botao-curso:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 1);
 }
 
@@ -574,6 +590,26 @@ footer {
     margin-top: 6vh;
     margin-left: 68.5vw;
     width: 70px;
+}
+
+@media screen and (max-device-width : 1379px) {
+    .cursos {
+        width: 20rem;
+        height: 19rem;
+        padding: 0;
+
+    }
+
+    .cursos h1 {
+        font-size: 25px;
+
+    }
+
+    .cursos p {
+        font-size: 15px;
+        padding: 0 1rem;
+
+    }
 }
 
 /* ------------SECTION 2---------- */
@@ -707,7 +743,7 @@ footer {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-#botao-contato:hover{
+#botao-contato:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 1);
 }
 
@@ -774,7 +810,7 @@ footer {
     gap: 2rem;
 }
 
-#grid-sozinho{
+#grid-sozinho {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -844,6 +880,17 @@ footer {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
+@media screen and (max-device-width : 1379px) {
+    #grid-turmas {
+        width: 61rem;
+        height: 25rem;
+        gap: 2rem 1rem;
+    }
+
+    .nav-adm {
+        width: 23vw;
+    }
+}
 /* ------------AREA-ADM-MATRICULAS-----------*/
 .main-adm-matricular {
     display: grid;
@@ -888,14 +935,18 @@ footer {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-#nome-box-matricular, #curso-box-matricular, #nparcela-box-matricular {
+#nome-box-matricular,
+#curso-box-matricular,
+#nparcela-box-matricular {
     width: 330px;
     height: 36px;
     border: none;
     border-radius: 4px;
 }
 
-#selecionar-curso, #selecionar-turma, .selecionar-curso-fin{
+#selecionar-curso,
+#selecionar-turma,
+.selecionar-curso-fin {
     width: 330px;
     height: 36px;
     border: none;
@@ -1017,11 +1068,11 @@ footer {
     justify-self: start;
 }
 
-.carrinho-icon{
+.carrinho-icon {
     height: 20px;
 }
 
-.div-carrinho-icon{
+.div-carrinho-icon {
     display: flex;
     gap: 10px;
 }
@@ -1029,16 +1080,16 @@ footer {
 /* -----------CUSTOMS---------- */
 
 /* CARD FINANCEIRO CURSO */
-.card{
+.card {
     max-width: 350px;
     width: 100%;
     background: #fff;
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-  }
+}
 
-  .card  label.box{
+.card label.box {
     background: #ddd;
     margin-top: 12px;
     padding: 10px 12px;
@@ -1047,17 +1098,20 @@ footer {
     border: 2px solid transparent;
     cursor: pointer;
     transition: all 0.25s ease;
-  }
-  #html-css:checked ~ label.first,
-  #javascript:checked ~ label.second,
-  #apisrest:checked ~ label.third{
+}
+
+#html-css:checked~label.first,
+#javascript:checked~label.second,
+#apisrest:checked~label.third {
     border-color: var(--corDestaque);
     background: #ffd752;
-  }
-  .card  label.box:hover{
+}
+
+.card label.box:hover {
     background: #ffe388;
-  }
-  .card  label.box .circle{
+}
+
+.card label.box .circle {
     height: 22px;
     width: 22px;
     background: #ccc;
@@ -1067,23 +1121,26 @@ footer {
     border-radius: 50%;
     transition: all 0.25s ease;
     box-shadow: inset -4px -4px 10px rgba(0, 0, 0, 0.2);
-  }
-  #html-css:checked ~ label.first .circle,
-  #javascript:checked ~ label.second .circle,
-  #apisrest:checked ~ label.third .circle{
+}
+
+#html-css:checked~label.first .circle,
+#javascript:checked~label.second .circle,
+#apisrest:checked~label.third .circle {
     border-color: var(--corDestaque);
     background: #fff;
-  
-  }
-  .card  label.box .plan{
+
+}
+
+.card label.box .plan {
     display: flex;
     width: 100%;
     align-items: center;
-  }
-  .card input[type="radio"]{
-    display: none;
-  }
+}
 
-  .checkbox{
+.card input[type="radio"] {
     display: none;
-  }
+}
+
+.checkbox {
+    display: none;
+}

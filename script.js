@@ -230,24 +230,6 @@ const alterarCurso = () => {
 
 const buscarCurso = () => {
 
-    //teste com checkbox
-    /* const inputCurso = document.getElementsByName('linguagem-curso')
-    
-    console.log(inputCurso.item)
-    
-    let procurar
-    
-    procurar = cursos.find(procurar => procurar.curso.toLowerCase().includes(inputCurso))
-
-    console.log(procurar)
-    if (procurar) {
-        return procurar
-    } else {
-        return 'Curso nao encontrado'
-    } */
-
-    //buscarCurso usando select
-
     const inputCurso = document.getElementById('curso-box-financeiro').value.toLowerCase()
 
     let procurar = cursos.find(procurar => procurar.curso.toLowerCase().includes(inputCurso))
@@ -282,30 +264,6 @@ const buscarCurso = () => {
 //FUNCAO CARRINHO CURSOS
 //-------------------------------
 
-//adicionarCarrinho com o checkbox
-/* let carrinhoCursos = []
-const adicionarCarrinho = (funcaoBuscarCurso) => {
-    const addIcon = document.querySelector('.check-icon')
-
-    addIcon.innerHTML = `<img class="carrinho-icon" src="./imagens/Vector.png">`
-
-    let cursos = document.getElementsByName('linguagem-curso')
-
-    const valorCurso = funcaoBuscarCurso.valor
-
-    for (i = 0; i < cursos.length; i++) {
-        if (cursos[i].checked) {
-            carrinhoCursos.push(valorCurso) 
-        }
-    }
-
-    console.log(carrinhoCursos)
-
-    return carrinhoCursos
-} */
-
-
-//adicionarCarrinho com o select
 let carrinhoCursos = []
 
 const adicionarCarrinho = (funcaoBuscarCurso) => {

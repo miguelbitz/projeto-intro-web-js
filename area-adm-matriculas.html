@@ -27,10 +27,10 @@
                     <li class="nav-item"><a href="./index.html">Home</a></li>
                     <li class="nav-item"><a href="./cursos.html">Cursos</a></li>
                     <li class="nav-item"><a href="./contato.html">Contato</a></li>
-                    <li class="nav-item"><a href="./area-adm-turmas.html">Area ADM</a></li>
+                    <li class="nav-item"><a href="./area-adm-turmas.html">Área ADM</a></li>
                 </ul>
             </div>
-            
+
             <div class="mobile-menu-icon">
                 <button onclick="menuShow()"><img class="icon" src="./imagens/menu-icon-button-7.png" alt=""></button>
             </div>
@@ -41,18 +41,18 @@
                 <li class="nav-item"><a href="./index.html">Home</a></li>
                 <li class="nav-item"><a href="./cursos.html">Cursos</a></li>
                 <li class="nav-item"><a href="./contato.html">Contato</a></li>
-                <li class="nav-item"><a href="./area-adm-turmas.html">Area ADM</a></li>
+                <li class="nav-item"><a href="./area-adm-turmas.html">Área ADM</a></li>
             </ul>
         </div>
     </header>
 
     <!-- MAIN -->
-    <main class="main-adm-matricular">
+    <main id="insert-section" class="main-adm-matricular">
 
         <nav class="nav-adm">
             <h1><a href="./area-adm-turmas.html">Turmas</a></h1>
-            <h1 class="nav-destaque"><a href="./area-adm-matriculas.html">Matriculas</a></h1>
-            <h1><a href="./area-adm-financeiro.html">Finaneiro Alunos</a></h1>
+            <h1 class="nav-destaque"><a href="./area-adm-matriculas.html">Matrículas</a></h1>
+            <h1><a href="./area-adm-financeiro.html">Financeiro Alunos</a></h1>
         </nav>
 
         <section class="section-adm-matricular">
@@ -64,36 +64,32 @@
 
 
                     <label class="form-matricular-label" for="nome-box-matricular">Nome</label>
-                    <input type="text" name="nome-matricular" id="nome-box-matricular">
+                    <input required type="text" name="nome-matricular" id="nome-box-matricular">
 
                     <label class="form-matricular-label" for="curso-box-matricular">Curso</label>
-                    <input type="text" name="curso-matricular" id="curso-box-matricular">
+
+                    <select required onchange="alterarCurso()" id="selecionar-curso" >
+                        <option disabled selected hidden>Selecione o curso</option>
+                        <option>HTML e CSS</option>
+                        <option>JavaScript</option>
+                        <option>ApisRest</option>
+                    </select>
 
                     <label class="form-matricular-label" for="turma-box-matricular">Turma</label>
-                    <input type="text" name="turma-matricular" id="turma-box-matricular">
+
+                    <select required id="selecionar-turma" for="turma-box-matricular">
+                        <option disabled selected hidden>Selecione a turma</option>
+                    </select>
 
                     <label class="form-matricular-label" for="nparcela-box-matricular">Número de parcelas</label>
-                    <input type="number" name="nparcela-matricular" id="nparcela-box-matricular">
+                    <input required type="number" name="nparcela-matricular" id="nparcela-box-matricular">
 
-                    <button id="botao-matricular" type="submit">Matricular Aluno</button>
+                    <button onclick="matricular()" id="botao-matricular" type="button">Matricular Aluno</button>
                 </form>
             </div>
         </section>
 
-        <section class="section-aluno-matriculado">
-
-            <div class="aluno-matriculado-h1">
-                <h1> Aluno Matriculado </h1>
-                <img src="./imagens/Vector.png">
-            </div>
-            <div class="aluno-matriculado">
-                <p>Aluno Matriculado</p>
-                <p>Nome: Calvin Klein</p>
-                <p>Curso: Javascript</p>
-                <p>Turma: Clarke</p>
-            </div>
-     
-            
+        <section id="section-aluno-matriculado">
 
         </section>
 
@@ -122,11 +118,11 @@
                 <h2>Links</h2>
                 <p><a href="./index.html">Home</a></p>
                 <p><a href="./cursos.html">Cursos</a></p>
-                <p><a href="#">Blog</a></p>
+                <p><a href="https://www.labenu.com.br/blog/home" target="_blank">Blog</a></p>
                 <p><a href="./contato.html">Fale conosco</a></p>
-                <p><a href="#">Termos e condições</a></p>
-                <p><a href="#">Política de privacidade</a></p>
-                <p><a href="#">FAQ</a></p>
+                <p><a href="https://www.labenu.com.br/termos-condicoes" target="_blank">Termos e condições</a></p>
+                <p><a href="https://www.labenu.com.br/politica-de-privacidade" target="_blank">Política de privacidade</a></p>
+                <p><a href="https://www.labenu.com.br/faq" target="_blank">FAQ</a></p>
 
             </div>
 
@@ -135,24 +131,24 @@
 
                 <div id="redes-sociais">
 
-                    <a href="#"><img src="./imagens/icon-twitter 1.png" alt="logo-twitter"></a>
+                    <a href="https://twitter.com/Labenu_" target="_blank"><img src="./imagens/icon-twitter 1.png" alt="logo-twitter"></a>
 
 
 
-                    <a href="#"><img src="./imagens/icon-linkedin 1.png" alt="logo-linkedin"></a>
+                    <a href="https://www.linkedin.com/school/labenu/" target="_blank"><img src="./imagens/icon-linkedin 1.png" alt="logo-linkedin"></a>
 
 
-                    <a href="#"><img src="./imagens/icon-fb 1.png" alt="logo-facebook"></a>
+                    <a href="https://www.facebook.com/profile.php?id=100063626798454" target="_blank"><img src="./imagens/icon-fb 1.png" alt="logo-facebook"></a>
 
-                    <a href="#"><img src="./imagens/icon-ig 1.png" alt="logo-instagram"></a>
+                    <a href="https://www.instagram.com/labenu_/" target="_blank"><img src="./imagens/icon-ig 1.png" alt="logo-instagram"></a>
 
                 </div>
             </div>
 
             <div>
                 <h2>Área Restrita</h2>
-                <p><a href="#">Área administrativa</a></p>
-                <p><a href="#">Espaço do aluno</a></p>
+                <p><a href="./area-adm-turmas.html">Área administrativa</a></p>
+                <p><a href="./area-adm-financeiro.html">Espaço do aluno</a></p>
             </div>
 
         </nav>

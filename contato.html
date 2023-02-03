@@ -50,8 +50,12 @@
 
     <section class="section-contato">
 
-            <form class="form" action="mailto:miguelbitz@gmail.com" method="POST">
+            <form class="form" action="https://formsubmit.co/miguelbitz@gmail.com" method="POST">
                 <h1>Fale Conosco</h1>
+
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
                 <label for="nome-box">Nome</label>
                 <input required type="text" name="nome" id="nome-box">
 
@@ -59,9 +63,9 @@
                 <input required type="email" name="email" id="email-box">
 
                 <label for="mensagem-box">Mensagem</label>
-                <textarea required type="text" id="mensagem-box"></textarea>
+                <textarea name="mensagem" type="text" id="mensagem-box"></textarea>
 
-                <button onclick="" id="botao-contato" type="submit">Enviar</button>
+                <button id="botao-contato" type="submit">Enviar</button>
             </form>
 
         <a href="https://web.whatsapp.com"><img src="./imagens/logos_whatsapp-icon.png" alt="whats-logo"

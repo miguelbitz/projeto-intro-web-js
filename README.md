@@ -1,4 +1,3 @@
-
 # PROJETO - Escola de programação
 
 Nesse projeto de intro-web utilizei as seguintes tecnologias:
@@ -36,4 +35,6 @@ link do deploy(surge):
 ```bash
   miguelbitzproject.surge.sh
 ```
+
+linkedin: https://www.linkedin.com/in/miguelbitz/
 

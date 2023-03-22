@@ -30,10 +30,7 @@ OBS: sem utilizar back-end
 
 ## Deploy
 
-link do deploy(surge): 
+link do deploy(surge): miguelbitzproject.surge.sh
 
-```bash
-  miguelbitzproject.surge.sh
-```
 
 linkedin: https://www.linkedin.com/in/miguelbitz/

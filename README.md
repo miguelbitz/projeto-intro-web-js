@@ -1,40 +1,43 @@
-# PROJETO - Escola de programação
+# Project - Programming School - GitHub README
 
-Nesse projeto de intro-web utilizei as seguintes tecnologias:
+Welcome to the Programming School project repository, a web development project focused on practicing the fundamentals of web technologies. This project simulates a programming school platform without using back-end technologies. Here, you will find information about the technologies used, the features implemented and how to collaborate on improvements.
+
+## The project was developed using the following technologies:
 
 - HTML
 - CSS
 - JavaScript
 
+## Features
 
+The main features of the Programming School project include:
 
-## Funcionalidades
+Student array (array of objects)
+Course array (array of objects)
+Class array (array of objects)
+Course installment function
+Course installment function with discount validation for multiple courses
+Function for adjusting course prices
+Course search
+Class search
+Student search
+Enrollment function (extra feature)
+Enrollment function accepts multiple courses (extra feature)
 
-- Possui array de estudantes
-- Possui array de cursos
-- Possui array de turmas
-- Todos os arrays são arrays de objeto
-- Possui função de parcelamento de curso
-- Função de parcelamento de curso valida desconto para múltiplos cursos
-- Possui função de reajuste de valores dos cursos
-- Possui busca de cursos
-- Possui busca de turmas
-- Possui busca de estudantes
+Note: This project does not use any back-end technologies.
 
-Extra:
-- Possui função de matrícula
-- Função de matrícula aceita múltiplos cursos
+## Deployment
 
-OBS: sem utilizar back-end
-
-
-## Deploy
-
-link do deploy(surge): 
+The project is hosted on Surge. Access the deployment through the link:
 
 ```bash
   miguelbitzproject.surge.sh
 ```
 
-linkedin: https://www.linkedin.com/in/miguelbitz/
+## Collaboration
 
+Suggestions and improvements are always welcome! To collaborate, fork the project, create a branch with your changes, and submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.

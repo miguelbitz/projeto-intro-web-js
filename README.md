@@ -31,7 +31,6 @@ Note: This project does not use any back-end technologies.
 The project is hosted on Surge. Access the deployment through the link:
 
 ```bash
-  miguelbitzproject.surge.sh
   projeto-intro-web-js.vercel.app
 ```
 

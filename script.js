@@ -240,8 +240,6 @@ const buscarCurso = () => {
         return 'Curso nao encontrado'
     }
 
-
-
     //outros metodos de busca
     /*     for (i = 0; i < cursos.length; i++) {
             if (cursos[i].curso.toLocaleLowerCase() === nomeCurso) {

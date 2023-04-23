@@ -28,7 +28,7 @@ Note: This project does not use any back-end technologies.
 
 ## Deployment
 
-The project is hosted on Surge. Access the deployment through the link:
+The project is hosted on Vercel. Access the deployment through the link:
 
 ```bash
   projeto-intro-web-js.vercel.app
